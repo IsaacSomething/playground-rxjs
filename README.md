@@ -27,7 +27,7 @@ https://pr.new/github.com/IsaacSomething/angular-base
 Start a simple in memory api with podcast dummy data, checkout to branch `memory-api`
 
 ```
-npm run server
+git clone -b memory-api --single-branch https://github.com/IsaacSomething/angular-base.git .
 ```
 
 <br />
