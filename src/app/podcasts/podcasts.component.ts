@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '@base/api/api.service';
-import { Podcasts } from 'data-access/model';
+import { Podcasts } from '@base/services/data-access/model';
 
 @Component({
   selector: 'base-podcasts',

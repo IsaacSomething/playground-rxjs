@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '@base/api/api.service';
-import { Users } from 'data-access/model';
+import { Users } from '@base/services/data-access/model';
 
 @Component({
   selector: 'base-users',

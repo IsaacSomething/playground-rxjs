@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { DataService } from '../../data-access/data.service';
+import { DataService } from '@base/services/data-access';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';

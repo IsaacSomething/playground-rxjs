@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ApiType } from 'data-access/model';
+import { ApiType } from '@base/services/data-access/model';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 
 @Injectable({
