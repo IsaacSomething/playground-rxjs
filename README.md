@@ -22,9 +22,9 @@ https://pr.new/github.com/IsaacSomething/angular-base
 <br />
 <hr />
 
-### Branch "with-server"
+### Branch "memory-api"
 
-Start a simple server on localhost:9000, checkout to branch `with-server`
+Start a simple in memory api with podcast dummy data, checkout to branch `memory-api`
 
 ```
 npm run server
@@ -33,7 +33,6 @@ npm run server
 <br />
 
 ![alt text](./src/assets/demo.png)
-
 
 ### @base tsconfig Path
 
