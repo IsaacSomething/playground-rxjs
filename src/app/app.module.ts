@@ -17,7 +17,10 @@ const moduleImports = [
   LayoutModule,
   ToolbarModule,
   MenuModule,
-  HttpClientInMemoryWebApiModule.forRoot(DataService)
+  HttpClientInMemoryWebApiModule.forRoot(DataService, {
+    delay: 2000
+    /* passThruUnknownUrl: true  */
+  })
 ];
 
 import { MatSidenavModule } from '@angular/material/sidenav';
