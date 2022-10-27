@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
+import { DataService } from '../../data-access/data.service';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from '@base/app-routing.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ToolbarModule } from '@base/components/toolbar';
 import { MenuModule } from '@base/components/menu';
-const moduleImports = [BrowserModule, BrowserAnimationsModule, AppRoutingModule, LayoutModule, ToolbarModule, MenuModule];
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+const moduleImports = [
+  BrowserModule,
+  HttpClientModule,
+  BrowserAnimationsModule,
+  AppRoutingModule,
+  LayoutModule,
+  ToolbarModule,
+  MenuModule,
+  HttpClientInMemoryWebApiModule.forRoot(DataService)
+];
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 const materialImports = [MatSidenavModule];

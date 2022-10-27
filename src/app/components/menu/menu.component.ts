@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { routeProps } from '@base/app-routing.module';
+import { mainMenuRouteProps } from '@base/app-routing.module';
 
 @Component({
   selector: 'base-menu',
@@ -7,6 +7,6 @@ import { routeProps } from '@base/app-routing.module';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
-  routes = routeProps;
+  routes = mainMenuRouteProps;
   constructor() {}
 }
