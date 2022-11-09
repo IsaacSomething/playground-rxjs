@@ -1,3 +1,5 @@
+<mat-progress-bar class="page-progress" *ngIf="!(podcasts$ | async)" mode="indeterminate"> </mat-progress-bar>
+
 <div *ngIf="podcasts$ | async as podcasts" fxLayout="row wrap" fxLayoutAlign="space-between">
   <mat-card *ngFor="let podcast of podcasts" fxLayout="column" fxFlex="0 1 calc(33% - 8px)" class="margin-bottom">
     <mat-card-header>

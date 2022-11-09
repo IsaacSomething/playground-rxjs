@@ -1,16 +1,21 @@
+<mat-progress-bar class="page-progress" *ngIf="!(users$ | async)" mode="indeterminate"> </mat-progress-bar>
+
 <div *ngIf="users$ | async as users" fxLayout="row wrap" fxLayoutAlign="space-between">
   <mat-card *ngFor="let user of users" fxLayout="column" fxFlex="0 1 calc(25% - 8px)" class="margin-bottom">
     <mat-card-header>
       <img [src]="user.image" mat-card-avatar />
     </mat-card-header>
     <mat-card-content>
-      {{ user.first_name }} <strong> {{ user.last_name }}</strong> <br />
-      <small class="text-upper"> {{ user.job_title }}</small> <br />
-      <button class="margin-top" mat-stroked-button>View</button>
+      <p class="margin-top">
+        {{ user.first_name }} <strong> {{ user.last_name }}</strong> <br />
+        <small class="text-upper"> {{ user.job_title }}</small>
+      </p>
     </mat-card-content>
 
     <span fxFlex="1 0 auto"></span>
 
-    <mat-card-actions> </mat-card-actions>
+    <mat-card-actions>
+      <button class="margin-top" mat-stroked-button>View</button>
+    </mat-card-actions>
   </mat-card>
 </div>

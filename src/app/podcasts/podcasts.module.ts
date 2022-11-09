@@ -7,7 +7,8 @@ const moduleImports = [FlexLayoutModule];
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
-const materialImports = [MatCardModule, MatGridListModule, MatButtonModule];
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+const materialImports = [MatCardModule, MatGridListModule, MatButtonModule, MatProgressBarModule];
 
 import { PodcastsRoutingModule } from './podcasts-routing.module';
 import { PodcastsComponent } from './podcasts.component';

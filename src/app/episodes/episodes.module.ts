@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
-const materialImports = [MatTableModule, MatPaginatorModule, MatCardModule];
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+const materialImports = [MatTableModule, MatPaginatorModule, MatCardModule, MatProgressBarModule];
 
 import { EpisodesRoutingModule } from './episodes-routing.module';
 import { EpisodesComponent } from './episodes.component';
