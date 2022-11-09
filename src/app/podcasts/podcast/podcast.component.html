@@ -1,5 +1,3 @@
-<p>{{ podcast$ | async | json }}</p>
-
 <mat-card *ngIf="podcast$ | async as podcast" fxLayout="column" fxFlex="0 1 calc(33% - 8px)" class="margin-bottom">
   <mat-card-header>
     <img
@@ -15,11 +13,17 @@
       <div *ngFor="let genre of podcast.genres" class="margin-right genre">
         {{ genre }}
       </div>
+      <div>
+        <audio controls style="margin-top: 32px">
+          <source [src]="episode?.audioUrl" />
+          Your browser does not support the audio tag.
+        </audio>
+      </div>
     </mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
-    <p class="margin-top">{{ podcast.description }}</p>
+    <p>{{ podcast.description }}</p>
   </mat-card-content>
 
   <span fxFlex="1 0 auto"></span>
