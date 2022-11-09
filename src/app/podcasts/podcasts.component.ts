@@ -11,7 +11,7 @@ import { map } from 'rxjs';
 export class PodcastsComponent {
   podcasts$ = this.apiService.getAll<Podcasts>('podcasts').pipe(map(podcast => Object.values(podcast) as Podcast[]));
 
-  strip(value: string):string {
+  strip(value: string): string {
     return value.replace(/<.*?>/g, '');
   }
 

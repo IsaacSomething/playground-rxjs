@@ -1,0 +1,21 @@
+.genre {
+  background: var(--base-primary);
+  border-radius: 30px;
+  padding: 0 6px;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.mat-card-avatar {
+  height: 140px;
+  width: 140px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.link-btn .mat-icon {
+  font-size: 19px;
+  margin: 2px -10px 0px 4px;
+}

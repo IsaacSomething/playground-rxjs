@@ -120,3 +120,7 @@ $font-weight: 400, 500, 700, 900;
 .spacer {
   flex: 1 1 auto;
 }
+
+.hidden {
+  opacity: 0;
+}
