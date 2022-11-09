@@ -7,5 +7,6 @@ import { podcasts, episodes, users } from './data';
 })
 export class DataService implements InMemoryDbService {
   constructor() {}
+
   createDb = () => ({ podcasts, episodes, users });
 }

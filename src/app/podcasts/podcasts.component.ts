@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '@base/services/api';
-import { Podcasts } from '@base/services/data-access/model';
+import { Podcast, Podcasts } from '@base/services/data-access/model';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'base-podcasts',
@@ -8,7 +9,11 @@ import { Podcasts } from '@base/services/data-access/model';
   styleUrls: ['./podcasts.component.scss']
 })
 export class PodcastsComponent {
-  podcasts$ = this.apiService.getAll<Podcasts>('podcasts');
+  podcasts$ = this.apiService.getAll<Podcasts>('podcasts').pipe(map(podcast => Object.values(podcast) as Podcast[]));
+
+  strip(value: string):string {
+    return value.replace(/<.*?>/g, '');
+  }
 
   constructor(private apiService: ApiService) {}
 }

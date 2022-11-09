@@ -15,6 +15,11 @@ export const mainMenuRouteProps: Routes = [
     data: { icon: 'podcasts' }
   },
   {
+    path: 'podcasts/podcast',
+    title: 'Podcast',
+    loadChildren: () => import('./podcasts/podcast/podcast.module').then(m => m.PodcastModule)
+  },
+  {
     path: 'episodes',
     title: 'Episodes',
     loadChildren: () => import('./episodes/episodes.module').then(m => m.EpisodesModule),

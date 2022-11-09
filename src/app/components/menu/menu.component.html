@@ -3,8 +3,10 @@
 </mat-toolbar>
 
 <mat-nav-list>
-  <mat-list-item *ngFor="let route of routes" [routerLink]="route.path">
-    <mat-icon *ngIf="route?.data as data" matListIcon>{{ data['icon'] }}</mat-icon>
-    <h3 matLine>{{ route.title }}</h3>
-  </mat-list-item>
+  <ng-container *ngFor="let route of routes">
+    <mat-list-item *ngIf="route?.data as data" [routerLink]="route.path">
+      <mat-icon matListIcon>{{ data['icon'] }}</mat-icon>
+      <h3 matLine>{{ route.title }}</h3>
+    </mat-list-item>
+  </ng-container>
 </mat-nav-list>

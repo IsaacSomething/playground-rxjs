@@ -1,1 +1,19 @@
-<p>{{ podcasts$ | async | json }}</p>
+<div *ngIf="podcasts$ | async as podcasts" fxLayout="row wrap" fxLayoutAlign="space-between">
+  <mat-card *ngFor="let podcast of podcasts" fxLayout="column" fxFlex="0 1 calc(33% - 8px)" class="margin-bottom">
+    <mat-card-header>
+      <img mat-card-avatar [src]="podcast.imageUrl" [alt]="podcast.name" />
+
+      <mat-card-title>{{ podcast.name }}</mat-card-title>
+      <mat-card-subtitle>{{ podcast.authorName }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{ strip(podcast.description) }}</p>
+    </mat-card-content>
+
+    <span fxFlex="1 0 auto"></span>
+    <mat-card-actions>
+      <button mat-stroked-button routerLink="podcast">View</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
