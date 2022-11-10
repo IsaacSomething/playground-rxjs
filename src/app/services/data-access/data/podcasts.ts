@@ -1,5 +1,9 @@
 import { Podcasts } from '../model/data.interface';
 
+/*
+https://taddy.org/developers
+*/
+
 export const podcasts: Podcasts = {
   4: {
     id: 4,

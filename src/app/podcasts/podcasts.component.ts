@@ -9,7 +9,15 @@ import { map } from 'rxjs';
   styleUrls: ['./podcasts.component.scss']
 })
 export class PodcastsComponent {
-  podcasts$ = this.apiService.getAll<Podcasts>('podcasts').pipe(map(podcast => Object.values(podcast) as Podcast[]));
+  podcastNews$ = this.apiService
+    .getAll<Podcasts>('podcasts')
+    .pipe(map(podcast => Object.values(podcast) as Podcast[]))
+    .pipe(map(podcasts => podcasts.filter(podcast => podcast.genres.includes('PODCASTSERIES_NEWS'))));
+
+  podcastOther$ = this.apiService
+    .getAll<Podcasts>('podcasts')
+    .pipe(map(podcast => Object.values(podcast) as Podcast[]))
+    .pipe(map(podcasts => podcasts.filter(podcast => !podcast.genres.includes('PODCASTSERIES_NEWS'))));
 
   strip(value: string): string {
     return value.replace(/<.*?>/g, '');

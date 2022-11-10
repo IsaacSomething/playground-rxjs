@@ -1,4 +1,7 @@
-<h2 mat-dialog-title>Add/Edit Podcast</h2>
+<h2 class="no-margin" mat-dialog-title>Add/Edit Podcast</h2>
+<small>
+  <a href="https://taddy.org/developers" target="_blank">https://taddy.org/developers</a>
+</small>
 
 <mat-dialog-content class="mat-typography">
   <mat-form-field class="full">
@@ -35,6 +38,6 @@
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>Update/add</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Cancel</button>
+  <button mat-stroked-button mat-dialog-close>Update/add</button>
+  <button mat-stroked-button [mat-dialog-close]="true" cdkFocusInitial>Cancel</button>
 </mat-dialog-actions>

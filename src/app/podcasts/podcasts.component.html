@@ -1,11 +1,23 @@
-<mat-progress-bar class="page-progress" *ngIf="!(podcasts$ | async)" mode="indeterminate"> </mat-progress-bar>
+<mat-progress-bar class="page-progress" *ngIf="!(podcastNews$ | async)" mode="indeterminate"> </mat-progress-bar>
 
-<ng-container *ngIf="podcasts$ | async as podcasts">
+<ng-container *ngIf="podcastNews$ | async as podcasts">
   <base-header title="Podcasts" class="margin-top"></base-header>
 
-  <div fxLayout="row wrap" fxLayoutAlign="space-between">
+  <mat-tab-group>
+    <mat-tab label="News" matRipple>
+      <ng-container *ngTemplateOutlet="list; context: { $implicit: podcasts }"> </ng-container>
+    </mat-tab>
+
+    <mat-tab label="Other">
+      <ng-container *ngTemplateOutlet="list; context: { $implicit: podcastOther$ | async }"> </ng-container>
+    </mat-tab>
+  </mat-tab-group>
+</ng-container>
+
+<ng-template #list let-casts>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between" class="card-container">
     <mat-card
-      *ngFor="let podcast of podcasts"
+      *ngFor="let podcast of casts"
       fxLayout="column"
       fxFlex.gt-xs="0 1 calc(50% - 8px)"
       fxFlex.gt-sm="0 1 calc(33% - 8px)"
@@ -34,4 +46,4 @@
       </mat-card-actions>
     </mat-card>
   </div>
-</ng-container>
+</ng-template>

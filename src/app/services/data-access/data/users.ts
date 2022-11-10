@@ -1,5 +1,9 @@
 import { Users } from '@base/services/data-access/model';
 
+/*
+https://taddy.org/developers
+*/
+
 export const users: Users = {
   1: {
     id: 1,

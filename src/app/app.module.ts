@@ -18,7 +18,7 @@ const moduleImports = [
   ToolbarModule,
   MenuModule,
   HttpClientInMemoryWebApiModule.forRoot(DataService, {
-    delay: 2000
+    delay: 2000,
     /* passThruUnknownUrl: true  */
   })
 ];

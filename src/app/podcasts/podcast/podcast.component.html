@@ -13,14 +13,14 @@
       />
 
       <mat-card-title>{{ podcast.name }}</mat-card-title>
-      <mat-card-subtitle>
+      <mat-card-subtitle class="no-margin">
         {{ podcast.authorName }} <br />
         <div *ngFor="let genre of podcast.genres" class="margin-right genre">
           {{ genre | category }}
         </div>
 
-        <div *ngIf="episode$ | async as episode; else loading">
-          <audio controls style="margin-top: 32px">
+        <div *ngIf="episode$ | async as episode; else loading" class="audio-container">
+          <audio controls>
             <source [src]="episode.audioUrl" />
             Your browser does not support the audio tag.
           </audio>

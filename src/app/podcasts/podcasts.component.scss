@@ -4,3 +4,9 @@ mat-card {
     overflow: hidden;
   }
 }
+
+.card-container {
+  margin-top: var(--base-spacing);
+  padding-left: 2px;
+  padding-right: 2px;
+}

@@ -16,8 +16,8 @@ export class ApiService {
    */
   getAll<T>(type: ApiType): Observable<T> {
     return this.http.get<T>(`api/${type}`).pipe(
-      retry(2),
       shareReplay(),
+      retry(2),
       catchError((error: HttpErrorResponse) => this.error(error))
     );
   }
@@ -30,8 +30,8 @@ export class ApiService {
   getPodcast(uuid: string | null): Observable<Podcast | undefined> {
     return this.http.get<Podcasts>('api/podcasts').pipe(
       map(podcast => (Object.values(podcast) as Podcast[]).find(podcast => podcast.uuid === uuid)),
-      retry(2),
       shareReplay(),
+      retry(2),
       catchError((error: HttpErrorResponse) => this.error(error))
     );
   }
@@ -55,8 +55,8 @@ export class ApiService {
   getSingleUser(): Observable<User | undefined> {
     return this.http.get<Users>('api/users').pipe(
       map(podcast => (Object.values(podcast) as User[])[0] as User),
-      retry(2),
       shareReplay(),
+      retry(2),
       catchError((error: HttpErrorResponse) => this.error(error))
     );
   }

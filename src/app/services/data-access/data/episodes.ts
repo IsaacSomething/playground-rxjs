@@ -1,5 +1,9 @@
 import { Episodes } from '@base/services/data-access/model';
 
+/*
+https://taddy.org/developers
+*/
+
 export const episodes: Episodes = {
   1: {
     uuid: '1e161ea4-cb0c-4544-bac9-827e950c0483',
