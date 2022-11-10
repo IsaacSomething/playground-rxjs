@@ -4,7 +4,7 @@
 
 <mat-nav-list>
   <ng-container *ngFor="let route of routes">
-    <mat-list-item *ngIf="route?.data as data" [routerLink]="route.path">
+    <mat-list-item *ngIf="route?.data as data" [routerLink]="route.path" routerLinkActive="active-link">
       <mat-icon matListIcon>{{ data['icon'] }}</mat-icon>
       <h3 matLine>{{ route.title }}</h3>
     </mat-list-item>

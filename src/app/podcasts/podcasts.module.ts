@@ -10,11 +10,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 const materialImports = [MatCardModule, MatGridListModule, MatButtonModule, MatProgressBarModule];
 
+import { HeaderComponent } from '@base/components/header';
+const standaloneImports = [HeaderComponent];
+
 import { PodcastsRoutingModule } from './podcasts-routing.module';
 import { PodcastsComponent } from './podcasts.component';
 
 @NgModule({
   declarations: [PodcastsComponent],
-  imports: [CommonModule, PodcastsRoutingModule, ...moduleImports, ...materialImports]
+  imports: [CommonModule, PodcastsRoutingModule, ...moduleImports, ...materialImports, ...standaloneImports]
 })
 export class PodcastsModule {}

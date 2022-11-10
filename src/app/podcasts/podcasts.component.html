@@ -1,26 +1,30 @@
 <mat-progress-bar class="page-progress" *ngIf="!(podcasts$ | async)" mode="indeterminate"> </mat-progress-bar>
 
-<div *ngIf="podcasts$ | async as podcasts" fxLayout="row wrap" fxLayoutAlign="space-between">
-  <mat-card *ngFor="let podcast of podcasts" fxLayout="column" fxFlex="0 1 calc(33% - 8px)" class="margin-bottom">
-    <mat-card-header>
-      <img
-        mat-card-avatar
-        [src]="podcast.imageUrl"
-        [alt]="podcast.name"
-        onerror="this.onerror=null; this.src='./assets/images/no-image.jpg'"
-      />
+<ng-container *ngIf="podcasts$ | async as podcasts">
+  <base-header title="Podcasts" class="margin-top"></base-header>
 
-      <mat-card-title>{{ podcast.name }}</mat-card-title>
-      <mat-card-subtitle>{{ podcast.authorName }}</mat-card-subtitle>
-    </mat-card-header>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between">
+    <mat-card *ngFor="let podcast of podcasts" fxLayout="column" fxFlex="0 1 calc(33% - 8px)" class="margin-bottom">
+      <mat-card-header>
+        <img
+          mat-card-avatar
+          [src]="podcast.imageUrl"
+          [alt]="podcast.name"
+          onerror="this.onerror=null; this.src='./assets/images/no-image.jpg'"
+        />
 
-    <mat-card-content>
-      <p>{{ strip(podcast.description) }}</p>
-    </mat-card-content>
+        <mat-card-title>{{ podcast.name }}</mat-card-title>
+        <mat-card-subtitle>{{ podcast.authorName }}</mat-card-subtitle>
+      </mat-card-header>
 
-    <span fxFlex="1 0 auto"></span>
-    <mat-card-actions>
-      <button mat-stroked-button [routerLink]="podcast.uuid">View</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+      <mat-card-content>
+        <p>{{ strip(podcast.description) }}</p>
+      </mat-card-content>
+
+      <span fxFlex="1 0 auto"></span>
+      <mat-card-actions>
+        <button mat-stroked-button [routerLink]="podcast.uuid">View</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</ng-container>

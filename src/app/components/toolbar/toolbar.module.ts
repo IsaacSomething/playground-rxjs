@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-const materialImports = [MatIconModule, MatToolbarModule, MatButtonModule];
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+const materialImports = [MatIconModule, MatToolbarModule, MatButtonModule, MatDialogModule, MatMenuModule];
 
 import { ToolbarComponent } from './toolbar.component';
 

@@ -1,8 +1,8 @@
 $positions: top, left, bottom, right;
 
 @mixin pad-doubles($type, $first, $second) {
-  #{$type}-#{$first}: var(--acth-spacing) !important;
-  #{$type}-#{$second}: var(--acth-spacing) !important;
+  #{$type}-#{$first}: var(--base-spacing) !important;
+  #{$type}-#{$second}: var(--base-spacing) !important;
 }
 
 /* MARGINS */

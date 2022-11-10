@@ -1,6 +1,8 @@
 <mat-progress-bar class="page-progress" *ngIf="!dataSource" mode="indeterminate"> </mat-progress-bar>
 
 <ng-container *ngIf="dataSource">
+  <base-header title="Episodes" class="margin-top"></base-header>
+
   <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z1">
     <ng-container matColumnDef="image">
       <th mat-header-cell *matHeaderCellDef></th>

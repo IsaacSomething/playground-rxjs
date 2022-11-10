@@ -8,5 +8,6 @@ import { mainMenuRouteProps } from '@base/app-routing.module';
 })
 export class MenuComponent {
   routes = mainMenuRouteProps;
+
   constructor() {}
 }

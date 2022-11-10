@@ -1,40 +1,44 @@
 <mat-progress-bar class="page-progress" *ngIf="!(podcast$ | async)" mode="indeterminate"></mat-progress-bar>
 
-<mat-card *ngIf="podcast$ | async as podcast" fxLayout="column" fxFlex="0 1 calc(33% - 8px)" class="margin-bottom">
-  <mat-card-header>
-    <img
-      mat-card-avatar
-      [src]="podcast.imageUrl"
-      [alt]="podcast.name"
-      onerror="this.onerror=null; this.src='./assets/images/no-image.jpg'"
-    />
+<ng-container *ngIf="podcast$ | async as podcast">
+  <base-header title="Podcasts" class="margin-top"></base-header>
 
-    <mat-card-title>{{ podcast.name }}</mat-card-title>
-    <mat-card-subtitle>
-      {{ podcast.authorName }} <br />
-      <div *ngFor="let genre of podcast.genres" class="margin-right genre">
-        {{ genre | category }}
-      </div>
+  <mat-card *ngIf="podcast$ | async as podcast" fxLayout="column" fxFlex="0 1 calc(33% - 8px)" class="margin-bottom">
+    <mat-card-header>
+      <img
+        mat-card-avatar
+        [src]="podcast.imageUrl"
+        [alt]="podcast.name"
+        onerror="this.onerror=null; this.src='./assets/images/no-image.jpg'"
+      />
 
-      <div *ngIf="episode$ | async as episode; else loading">
-        <audio controls style="margin-top: 32px">
-          <source [src]="episode.audioUrl" />
-          Your browser does not support the audio tag.
-        </audio>
-      </div>
+      <mat-card-title>{{ podcast.name }}</mat-card-title>
+      <mat-card-subtitle>
+        {{ podcast.authorName }} <br />
+        <div *ngFor="let genre of podcast.genres" class="margin-right genre">
+          {{ genre | category }}
+        </div>
 
-      <ng-template #loading>
-        <mat-spinner diameter="40"> </mat-spinner>
-      </ng-template>
-    </mat-card-subtitle>
-  </mat-card-header>
+        <div *ngIf="episode$ | async as episode; else loading">
+          <audio controls style="margin-top: 32px">
+            <source [src]="episode.audioUrl" />
+            Your browser does not support the audio tag.
+          </audio>
+        </div>
 
-  <mat-card-content>
-    <p class="margin-top">{{ podcast.description }}</p>
-  </mat-card-content>
+        <ng-template #loading>
+          <mat-spinner diameter="40"> </mat-spinner>
+        </ng-template>
+      </mat-card-subtitle>
+    </mat-card-header>
 
-  <span fxFlex="1 0 auto"></span>
-  <mat-card-actions>
-    <a [href]="podcast.websiteUrl" target="_blank" mat-stroked-button class="link-btn">Website <mat-icon>open_in_new</mat-icon></a>
-  </mat-card-actions>
-</mat-card>
+    <mat-card-content>
+      <p class="margin-top">{{ podcast.description }}</p>
+    </mat-card-content>
+
+    <span fxFlex="1 0 auto"></span>
+    <mat-card-actions>
+      <a [href]="podcast.websiteUrl" target="_blank" mat-stroked-button class="link-btn">Website <mat-icon>open_in_new</mat-icon></a>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>

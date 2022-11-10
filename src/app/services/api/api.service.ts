@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ApiType, Episode, Podcast, Podcasts } from '@base/services/data-access/model';
-import { catchError, combineLatest, find, map, Observable, retry, shareReplay, throwError } from 'rxjs';
+import { ApiType, Episode, Podcast, Podcasts, User, Users } from '@base/services/data-access/model';
+import { catchError, combineLatest, first, map, Observable, retry, shareReplay, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +28,9 @@ export class ApiService {
    * @returns Observable<Podcast>
    */
   getPodcast(uuid: string | null): Observable<Podcast | undefined> {
-    return this.http.get<Podcast>('api/podcasts').pipe(
+    return this.http.get<Podcasts>('api/podcasts').pipe(
       map(podcast => (Object.values(podcast) as Podcast[]).find(podcast => podcast.uuid === uuid)),
+      retry(2),
       shareReplay(),
       catchError((error: HttpErrorResponse) => this.error(error))
     );
@@ -43,6 +44,19 @@ export class ApiService {
   getPodcastWithEpisode(uuid: string | null): Observable<Episode | undefined> {
     return combineLatest([this.getPodcast(uuid), this.getAll<Podcasts>('episodes')]).pipe(
       map(([podcast, episodes]) => Object.values(episodes).find(episode => episode.podcastId === podcast?.id)),
+      catchError((error: HttpErrorResponse) => this.error(error))
+    );
+  }
+
+  /**
+   * Get the first user
+   * @returns Observable<User | undefined>
+   */
+  getSingleUser(): Observable<User | undefined> {
+    return this.http.get<Users>('api/users').pipe(
+      map(podcast => (Object.values(podcast) as User[])[0] as User),
+      retry(2),
+      shareReplay(),
       catchError((error: HttpErrorResponse) => this.error(error))
     );
   }
