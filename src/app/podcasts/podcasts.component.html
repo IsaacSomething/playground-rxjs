@@ -4,7 +4,14 @@
   <base-header title="Podcasts" class="margin-top"></base-header>
 
   <div fxLayout="row wrap" fxLayoutAlign="space-between">
-    <mat-card *ngFor="let podcast of podcasts" fxLayout="column" fxFlex="0 1 calc(33% - 8px)" class="margin-bottom">
+    <mat-card
+      *ngFor="let podcast of podcasts"
+      fxLayout="column"
+      fxFlex.gt-xs="0 1 calc(50% - 8px)"
+      fxFlex.gt-sm="0 1 calc(33% - 8px)"
+      fxFlex.gt-md="0 1 calc(25% - 8px)"
+      class="margin-bottom"
+    >
       <mat-card-header>
         <img
           mat-card-avatar

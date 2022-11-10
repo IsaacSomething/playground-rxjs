@@ -12,4 +12,6 @@ export class PodcastComponent {
   episode$ = this.apiService.getPodcastWithEpisode(this.activatedRoute.snapshot.paramMap.get('uuid'));
 
   constructor(private activatedRoute: ActivatedRoute, private apiService: ApiService) {}
+
+  delete() {}
 }

@@ -36,9 +36,9 @@
       <p class="margin-top">{{ podcast.description }}</p>
     </mat-card-content>
 
-    <span fxFlex="1 0 auto"></span>
     <mat-card-actions>
       <a [href]="podcast.websiteUrl" target="_blank" mat-stroked-button class="link-btn">Website <mat-icon>open_in_new</mat-icon></a>
+      <button mat-stroked-button (click)="delete()">Delete</button>
     </mat-card-actions>
   </mat-card>
 </ng-container>
