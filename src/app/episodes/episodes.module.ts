@@ -7,14 +7,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 const materialImports = [MatTableModule, MatPaginatorModule, MatCardModule, MatProgressBarModule];
 
-import { HeaderComponent } from '@base/components/header';
-const standaloneImports = [HeaderComponent];
-
 import { EpisodesRoutingModule } from './episodes-routing.module';
 import { EpisodesComponent } from './episodes.component';
 
 @NgModule({
   declarations: [EpisodesComponent],
-  imports: [CommonModule, EpisodesRoutingModule, ...materialImports, ...standaloneImports]
+  imports: [CommonModule, EpisodesRoutingModule, ...materialImports]
 })
 export class EpisodesModule {}

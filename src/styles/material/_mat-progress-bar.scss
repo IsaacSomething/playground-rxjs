@@ -1,5 +1,5 @@
-.mat-progress-bar {
-  &.page-progress {
+.page-progress {
+  .mat-progress-bar {
     margin: -16px -16px 0 -16px;
     width: calc(100% + 32px);
   }

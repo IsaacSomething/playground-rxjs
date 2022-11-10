@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogAddComponent } from '../dialog-add';
+import { DialogInsertComponent } from '../dialog-insert';
 import { ApiService } from '@base/services/api';
 
 @Component({
@@ -18,6 +18,6 @@ export class ToolbarComponent {
   constructor(private dialog: MatDialog, private apiService: ApiService) {}
 
   add() {
-    this.dialog.open(DialogAddComponent, { width: '500px' });
+    this.dialog.open(DialogInsertComponent, { width: '500px', panelClass: 'with-loader' });
   }
 }

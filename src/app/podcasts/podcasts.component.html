@@ -1,8 +1,6 @@
-<mat-progress-bar class="page-progress" *ngIf="!(podcastNews$ | async)" mode="indeterminate"> </mat-progress-bar>
+<base-loader class="page-progress"></base-loader>
 
 <ng-container *ngIf="podcastNews$ | async as podcasts">
-  <base-header title="Podcasts" class="margin-top"></base-header>
-
   <mat-tab-group>
     <mat-tab label="News" matRipple>
       <ng-container *ngTemplateOutlet="list; context: { $implicit: podcasts }"> </ng-container>

@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LoaderService } from '@base/components/loader/loader.service';
 import { ApiType, Episode, Podcast, Podcasts, User, Users } from '@base/services/data-access/model';
 import { catchError, combineLatest, first, map, Observable, retry, shareReplay, throwError } from 'rxjs';
 
@@ -7,7 +8,7 @@ import { catchError, combineLatest, first, map, Observable, retry, shareReplay, 
   providedIn: 'root'
 })
 export class ApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private loaderService: LoaderService) {}
 
   /**
    * Get all values from type of data

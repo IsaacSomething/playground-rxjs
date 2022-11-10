@@ -1,0 +1,9 @@
+.with-loader {
+  position: relative !important;
+
+  .mat-progress-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}

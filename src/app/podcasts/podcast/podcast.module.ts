@@ -21,14 +21,11 @@ const materialImports = [
   MatProgressSpinnerModule
 ];
 
-import { HeaderComponent } from '@base/components/header';
-const standaloneImports = [HeaderComponent];
-
 import { PodcastRoutingModule } from './podcast-routing.module';
 import { PodcastComponent } from './podcast.component';
 
 @NgModule({
   declarations: [PodcastComponent],
-  imports: [CommonModule, PodcastRoutingModule, ...moduleImports, ...materialImports, ...standaloneImports]
+  imports: [CommonModule, PodcastRoutingModule, ...moduleImports, ...materialImports]
 })
 export class PodcastModule {}

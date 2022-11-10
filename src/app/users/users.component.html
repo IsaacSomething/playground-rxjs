@@ -1,8 +1,6 @@
 <mat-progress-bar class="page-progress" *ngIf="!(users$ | async)" mode="indeterminate"> </mat-progress-bar>
 
 <ng-container *ngIf="users$ | async as users">
-  <base-header title="Users" class="margin-top"></base-header>
-
   <div fxLayout="row wrap" fxLayoutAlign="space-between">
     <mat-card
       *ngFor="let user of users"
