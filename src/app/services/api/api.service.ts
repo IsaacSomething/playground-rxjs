@@ -23,6 +23,10 @@ export class ApiService {
     );
   }
 
+  savePodcast(podcast: Podcast) {
+    return this.http.post('api/podcast', podcast);
+  }
+
   /**
    * Get a single podcast
    * @param uuid : string

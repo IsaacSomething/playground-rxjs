@@ -8,8 +8,6 @@ export class LoaderService {
   private isLoading$ = new BehaviorSubject<boolean>(false);
   loading$: Observable<boolean> = this.isLoading$.asObservable();
 
-  constructor() {}
-
   showLoaderUntilComplete<T>(observable$: Observable<T>): Observable<T> {
     this.show();
     observable$.subscribe({ complete: () => this.hide() });

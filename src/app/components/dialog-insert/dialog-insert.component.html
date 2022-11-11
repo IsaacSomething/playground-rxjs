@@ -1,45 +1,50 @@
 <h2 class="no-margin" mat-dialog-title>Add/Edit Podcast</h2>
-<small>
+<small class="margin-bottom">
   <a href="https://taddy.org/developers" target="_blank">https://taddy.org/developers</a>
 </small>
 
-<mat-dialog-content class="mat-typography">
-  <mat-form-field class="full">
-    <mat-label>Name</mat-label>
-    <input matInput />
-  </mat-form-field>
+<form [formGroup]="podcastForm">
+  <mat-dialog-content class="mat-typography">
+    <mat-form-field class="full">
+      <mat-label>Name</mat-label>
+      <input matInput autocomplete="off" formControlName="name" />
+    </mat-form-field>
 
-  <mat-form-field class="full">
-    <mat-label>Author</mat-label>
-    <input matInput />
-  </mat-form-field>
+    <mat-form-field class="full">
+      <mat-label>Author</mat-label>
+      <input matInput autocomplete="off" formControlName="author" />
+    </mat-form-field>
 
-  <mat-form-field class="full">
-    <mat-label>Image url</mat-label>
-    <input matInput />
-  </mat-form-field>
+    <mat-form-field class="full">
+      <mat-label>Description</mat-label>
+      <input matInput autocomplete="off" formControlName="description" />
+    </mat-form-field>
 
-  <mat-form-field class="full">
-    <mat-label>Description</mat-label>
-    <input matInput />
-  </mat-form-field>
+    <mat-form-field class="full">
+      <mat-label>Image url</mat-label>
+      <input matInput autocomplete="off" formControlName="imageUrl" />
+    </mat-form-field>
 
-  <mat-form-field class="full">
-    <mat-label>Website</mat-label>
-    <input matInput />
-  </mat-form-field>
+    <mat-form-field class="full">
+      <mat-label>Website</mat-label>
+      <input matInput formControlName="website" />
+    </mat-form-field>
 
-  <mat-form-field class="full">
-    <mat-label>Select</mat-label>
-    <mat-select placeholder="Category">
-      <mat-option *ngFor="let item of categories" [value]="item"> {{ item }} </mat-option>
-    </mat-select>
-  </mat-form-field>
-</mat-dialog-content>
+    <mat-form-field class="full">
+      <mat-label>Select</mat-label>
+      <mat-select placeholder="Category" formControlName="category">
+        <mat-option *ngFor="let item of categories" [value]="item"> {{ item }} </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-<mat-dialog-actions>
-  <button mat-stroked-button mat-dialog-close>Update/add</button>
-  <button mat-stroked-button [mat-dialog-close]="true" cdkFocusInitial>Cancel</button>
-</mat-dialog-actions>
+    <mat-slide-toggle class="margin-bottom" formControlName="isExplicitContent">Is explicit content</mat-slide-toggle>
+    <br />
+    <mat-slide-toggle formControlName="isComplete">Is complete</mat-slide-toggle>
+  </mat-dialog-content>
 
+  <mat-dialog-actions class="margin-top">
+    <button mat-stroked-button mat-dialog-close (click)="insert()">Update/add</button>
+    <button mat-stroked-button [mat-dialog-close]="true" cdkFocusInitial>Cancel</button>
+  </mat-dialog-actions>
+</form>
 <base-loader></base-loader>

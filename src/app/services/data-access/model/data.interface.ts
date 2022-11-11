@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 import { HttpString } from './data.type';
 
 export interface Podcast {
@@ -17,6 +18,17 @@ export interface Podcast {
 
 export interface Podcasts {
   [key: number]: Podcast;
+}
+
+export interface PodcastForm {
+  name: FormControl<string | null>;
+  author: FormControl<string | null>;
+  description: FormControl<string | null>;
+  website: FormControl<string | null>;
+  imageUrl: FormControl<string | null>;
+  isExplicitContent: FormControl<boolean | null>;
+  isComplete: FormControl<boolean | null>;
+  category: FormControl<string | null>;
 }
 
 export interface User {
