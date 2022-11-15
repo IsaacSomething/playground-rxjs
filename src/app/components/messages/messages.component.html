@@ -1,0 +1,9 @@
+<ng-container *ngIf="errors$ | async as errors">
+  <ng-container *ngIf="showMessages">
+    <mat-card class="mat-elevation-z0 no-radius" *ngFor="let error of errors">
+      <label class="weight-900">{{ error }}</label>
+      <span class="spacer"></span>
+      <button mat-flat-button (click)="retry()">Retry</button>
+    </mat-card>
+  </ng-container>
+</ng-container>

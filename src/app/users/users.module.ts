@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
-const moduleImports = [FlexLayoutModule];
-
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,6 +12,6 @@ import { UsersComponent } from './users.component';
 
 @NgModule({
   declarations: [UsersComponent],
-  imports: [CommonModule, UsersRoutingModule, ...materialImports, ...moduleImports]
+  imports: [CommonModule, UsersRoutingModule, ...materialImports]
 })
 export class UsersModule {}

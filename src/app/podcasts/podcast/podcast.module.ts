@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CategoryModule } from '@base/pipes/category';
-const moduleImports = [CategoryModule];
+import { LoaderComponent } from '@base/components/loader';
+const moduleImports = [CategoryModule, LoaderComponent];
 
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';

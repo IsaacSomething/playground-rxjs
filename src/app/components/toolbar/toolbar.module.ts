@@ -6,7 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
-const materialImports = [MatIconModule, MatToolbarModule, MatButtonModule, MatDialogModule, MatMenuModule];
+import { MatTooltipModule } from '@angular/material/tooltip';
+const materialImports = [MatIconModule, MatToolbarModule, MatButtonModule, MatDialogModule, MatMenuModule, MatTooltipModule];
 
 import { ToolbarComponent } from './toolbar.component';
 

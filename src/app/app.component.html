@@ -6,7 +6,10 @@
   <mat-sidenav-content [class.small]="small$ | async">
     <base-toolbar [sidenav]="sidenav" [small]="small$ | async"></base-toolbar>
 
+    <base-messages></base-messages>
+
     <div class="margin">
+      <base-loader class="page-progress"></base-loader>
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

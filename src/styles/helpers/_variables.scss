@@ -3,7 +3,7 @@
 @include mat.core();
 
 :root {
-  --base-divider: mat.get-color-from-palette();
+  --base-divider: #f3f3f3;
   --base-spacing: 16px;
   --base-primary-font: 'Quicksand', sans-serif;
   --base-secondary-font: 'Roboto', sans-serif;
@@ -14,4 +14,5 @@
   --base-bg: #ffffff;
   --base-bar: #ffffff;
   --base-card: #ffffff;
+  
 }

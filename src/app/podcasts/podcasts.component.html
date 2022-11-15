@@ -1,6 +1,6 @@
-<base-loader class="page-progress"></base-loader>
-
 <ng-container *ngIf="podcastNews$ | async as podcasts">
+  <button mat-button class="error-btn" (click)="error()">Error</button>
+
   <mat-tab-group>
     <mat-tab label="News" matRipple>
       <ng-container *ngTemplateOutlet="list; context: { $implicit: podcasts }"> </ng-container>
@@ -13,15 +13,8 @@
 </ng-container>
 
 <ng-template #list let-casts>
-  <div fxLayout="row wrap" fxLayoutAlign="space-between" class="card-container">
-    <mat-card
-      *ngFor="let podcast of casts"
-      fxLayout="column"
-      fxFlex.gt-xs="0 1 calc(50% - 8px)"
-      fxFlex.gt-sm="0 1 calc(33% - 8px)"
-      fxFlex.gt-md="0 1 calc(25% - 8px)"
-      class="margin-bottom"
-    >
+  <div class="card-container margin-bottom">
+    <mat-card *ngFor="let podcast of casts">
       <mat-card-header>
         <img
           mat-card-avatar
@@ -38,7 +31,7 @@
         <p>{{ strip(podcast.description) }}</p>
       </mat-card-content>
 
-      <span fxFlex="1 0 auto"></span>
+      <span class="spacer"></span>
       <mat-card-actions>
         <button mat-stroked-button [routerLink]="podcast.uuid">View</button>
       </mat-card-actions>

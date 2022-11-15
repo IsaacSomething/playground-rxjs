@@ -18,7 +18,8 @@ const moduleImports = [
   ToolbarModule,
   MenuModule,
   HttpClientInMemoryWebApiModule.forRoot(DataService, {
-    delay: 2000,
+    delay: 0,
+    dataEncapsulation: false
     /* passThruUnknownUrl: true  */
   })
 ];
@@ -26,11 +27,15 @@ const moduleImports = [
 import { MatSidenavModule } from '@angular/material/sidenav';
 const materialImports = [MatSidenavModule];
 
+import { MessagesComponent } from '@base/components/messages';
+import { LoaderComponent } from '@base/components/loader';
+const standaloneComponents = [MessagesComponent, LoaderComponent];
+
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [...materialImports, ...moduleImports],
+  imports: [...materialImports, ...moduleImports, ...standaloneComponents],
   providers: [],
   bootstrap: [AppComponent]
 })

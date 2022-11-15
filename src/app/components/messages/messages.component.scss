@@ -1,0 +1,8 @@
+.mat-card {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--base-divider);
+  color: var(--base-warn);
+}

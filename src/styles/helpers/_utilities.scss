@@ -73,11 +73,17 @@ $text-align: center, left, right;
   }
 }
 
-$text-color: primary, accent, warn;
+$color: primary, accent, warn, divider;
 
-@each $name in $text-color {
+@each $name in $color {
   .text-#{$name} {
     color: var(--base-#{$name}) !important;
+  }
+}
+
+@each $name in $color {
+  .bg-#{$name} {
+    background: var(--base-#{$name}) !important;
   }
 }
 

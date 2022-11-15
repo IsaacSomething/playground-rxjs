@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
-const moduleImports = [FlexLayoutModule];
-
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,6 +15,6 @@ import { PodcastsComponent } from './podcasts.component';
 
 @NgModule({
   declarations: [PodcastsComponent],
-  imports: [CommonModule, PodcastsRoutingModule, ...moduleImports, ...materialImports, ...standaloneImports]
+  imports: [CommonModule, PodcastsRoutingModule, ...materialImports, ...standaloneImports]
 })
 export class PodcastsModule {}

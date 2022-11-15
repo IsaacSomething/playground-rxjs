@@ -9,4 +9,28 @@ mat-card {
   margin-top: var(--base-spacing);
   padding-left: 2px;
   padding-right: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  flex: 1;
+  flex-direction: row wrap;
+
+  .mat-card {
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+    justify-items: stretch;
+  }
+}
+
+.mat-tab-group {
+  margin-top: -8px;
+}
+
+.error-btn {
+  position: absolute;
+  top: 77px;
+  right: 10px;
+  color: var(--base-warn);
+  z-index: 1000;
 }
